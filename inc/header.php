@@ -13,13 +13,13 @@
           <a class="nav-link" href="room.php">Phòng</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"> Facilities</a>
+          <a class="nav-link" href="facilities.php"> Facilities</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Liên hệ</a>
+          <a class="nav-link" href="contact.php">Liên hệ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Mô tả</a>
+          <a class="nav-link" href="about.php">Mô tả</a>
         </li>
         
       </ul>

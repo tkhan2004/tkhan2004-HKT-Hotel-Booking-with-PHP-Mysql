@@ -31,13 +31,13 @@
 
         <div>
             <form method="POST" >
-                <h4 class="bg-dark text-white py-3">Admin Login Panel</h4>
+                <h4 class="bg-dark text-white py-3">Quản trị viên</h4>
                 <div class="p-4">
                 <div class="mb-3">
-                <input name="admin_name" type="text" class="form-control shadow-none text-center" placeholder="Admin Name">
+                <input name="admin_name" type="text" class="form-control shadow-none text-center" placeholder="Tài khoản admin">
               </div>
               <div class="mb-3" >
-                <input name="admin_password" type="password" class="form-control shadow-none text-center" placeholder="PassWord">
+                <input name="admin_password" type="password" class="form-control shadow-none text-center" placeholder="Mật khẩu">
               </div>
               <button name="login" type="submit" class="btn text while custom-bg shadow-none">Đăng nhập</button>
             </form>

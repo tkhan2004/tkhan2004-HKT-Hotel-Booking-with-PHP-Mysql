@@ -5,7 +5,13 @@
             HKT HOTEL
           </h3>
           <p>
-            đasadasfddddddddddddddddd
+HKT Hotel hân hạnh là điểm đến lý tưởng dành cho quý khách khi ghé thăm thành phố. Với sự kết hợp hoàn hảo giữa phong cách thiết kế hiện đại và không gian thoải mái, chúng tôi mang đến cho quý khách một trải nghiệm nghỉ dưỡng hoàn toàn khác biệt. 
+
+HKT Hotel tự hào sở hữu hệ thống phòng nghỉ được trang bị đầy đủ tiện nghi, từ các thiết bị hiện đại đến nội thất tinh tế, đáp ứng mọi nhu cầu của quý khách. Không chỉ dừng lại ở chất lượng phòng nghỉ, chúng tôi còn cung cấp đa dạng dịch vụ như nhà hàng sang trọng, phòng hội nghị chuyên nghiệp, khu spa thư giãn và phòng gym hiện đại.
+
+Đội ngũ nhân viên của HKT Hotel luôn tận tâm và sẵn sàng phục vụ quý khách, đảm bảo mang đến sự hài lòng và cảm giác thoải mái nhất trong suốt thời gian lưu trú. Chúng tôi tin rằng những trải nghiệm tại HKT Hotel sẽ tạo nên những kỷ niệm đáng nhớ cho quý khách.
+
+HKT Hotel – Nơi nghỉ dưỡng lý tưởng giữa lòng thành phố.
           </p>
         </div>
           <div class="col-lg-4 p-4">

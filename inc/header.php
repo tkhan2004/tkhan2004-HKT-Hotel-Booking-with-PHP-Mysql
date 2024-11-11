@@ -94,7 +94,7 @@
         </div>
         <div class="contenter-fluid">  
         </div>
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" required>
           </div>
@@ -105,7 +105,7 @@
           <div class="d-flex align-items-center justify-content-between">
             <button type="submit" class="btn btn-dark shadow-none">Submit</button>
             <a href="javascript:void(0)">Quên mật khẩu</a>
-          </div> -->
+          </div>
         </div>
       </div>
     </form>

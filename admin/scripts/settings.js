@@ -62,12 +62,12 @@ function upd_general(site_title_val,site_about_val)
 
     if(this.responseText == 1)
     {
-      alert('success','Changes saved!');
+      alert('Thành Công','Đã lưu thay đổi!');
       get_general();
     }
     else
     {
-      alert('error','No changes made!');
+      alert('Lỗi','Không có thay đổi được thực hiện!');
     }
   }
 

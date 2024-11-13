@@ -21,7 +21,7 @@
                 <h3 class="mb-4">CÀI ĐẶT</h3>
 
                 <!-- Cài đặt card -->
-                <div class="card">
+                <div class="card border-0 shadow-sm mb -4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h5 class="card-title m-0">Cài đặt tổng thể</h5>

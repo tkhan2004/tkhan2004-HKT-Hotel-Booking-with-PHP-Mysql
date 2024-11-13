@@ -34,4 +34,21 @@
             die('Query cannot prepare - select'); // Thông báo lỗi nếu câu lệnh không chuẩn bị được
         }
     }
+
+    function update($sql, $values, $datatype) {
+        $con = $GLOBALS['con']; // Truy cập biến kết nối toàn cục $con
+    
+        if ($stmt = mysqli_prepare($con, $sql)) { // Chuẩn bị câu lệnh SQL
+            mysqli_stmt_bind_param($stmt, $datatype, ...$values); // Liên kết các tham số với câu lệnh chuẩn bị
+            if (mysqli_stmt_execute($stmt)) { // Thực thi câu lệnh
+                $res = mysqli_stmt_affected_rows($stmt); // Lấy kết quả truy vấn
+                mysqli_stmt_close($stmt); // Đóng câu lệnh chuẩn bị
+                return $res; // Trả về kết quả
+            } else {
+                die('Query cannot be executed - Update'); // Thông báo lỗi nếu truy vấn không thực thi được
+            }
+        } else {
+            die('Query cannot prepare - Update'); // Thông báo lỗi nếu câu lệnh không chuẩn bị được
+        }
+    }
 ?>

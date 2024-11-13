@@ -3,28 +3,24 @@
     require('../inc/config.php');
     adminLogin();
 
-    if (isset($_POST['get_general'])) {
-        // Sử dụng dấu nháy ngược để bao quanh tên bảng và cột
-        $q = "SELECT * FROM `settings` WHERE `sr_no` = ?";
+    if (isset($_POST['get_general'])) 
+    {// Sử dụng dấu nháy ngược để bao quanh tên bảng và cột
+        $q = "SELECT * FROM `settings` WHERE `sr_no`=?";
         $values = [1];
-
-        // Thực hiện truy vấn
-        $res = select($q, $values, "i");
-
-        if ($res) {
-            $data = mysqli_fetch_assoc($res);
-
-            // Kiểm tra xem dữ liệu có tồn tại không
-            if ($data) {
-                // Mã hóa kết quả thành JSON và trả về
-                echo json_encode($data);
-            } else {
-                // Nếu không có dữ liệu, trả về thông báo lỗi
-                echo json_encode(["error" => "No data found."]);
-            }
-        } else {
-            // Nếu truy vấn không thành công, trả về thông báo lỗi
-            echo json_encode(["error" => "Query failed."]);
-        }
+        $res = select($q,$values,"i");
+        $data = mysqli_fetch_assoc($res);
+        $json_data = json_encode($data);
+        echo $json_data;
     }
+
+    if(isset($_POST['upd_general'])) 
+    {
+        $frm_data = filteration($_POST);
+
+        $q = "UPDATE `settings` SET `site_title`= ? ,`site_about`= ? WHERE `sr_no`= ?";
+        $values = [$frm_data['site_title'], $frm_data['site_about'],1];
+        $res = update($q, $values, 'ssi');
+        echo $res;
+    }
+    
 ?>

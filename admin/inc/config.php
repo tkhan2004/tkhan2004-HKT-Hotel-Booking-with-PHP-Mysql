@@ -1,12 +1,14 @@
-<?php 
+<?php
+
     $hname = 'localhost';
     $uname = 'root';
     $pass = '';
     $db = 'hktbooking';
     // kết nối db
     $con = mysqli_connect($hname,$uname,$pass,$db);
+    
     if(!$con){
-        die('Could not connect: ' . mysqli_connect_error());
+        die("Không thể kết nối với database".mysqli_connect_error());
     }
     // hàm này để lọc cơ sở dữ liệu
     function filteration($data) {
@@ -28,10 +30,11 @@
                 mysqli_stmt_close($stmt); // Đóng câu lệnh chuẩn bị
                 return $res; // Trả về kết quả
             } else {
-                die('Query cannot be executed - select'); // Thông báo lỗi nếu truy vấn không thực thi được
+                mysqli_stmt_close($stmt);
+                die('Truy vấn không thể thực thi - Select'); // Thông báo lỗi nếu truy vấn không thực thi được
             }
         } else {
-            die('Query cannot prepare - select'); // Thông báo lỗi nếu câu lệnh không chuẩn bị được
+            die('Truy vấn không được chuẩn bị sẵn - Select'); // Thông báo lỗi nếu câu lệnh không chuẩn bị được
         }
     }
 ?>

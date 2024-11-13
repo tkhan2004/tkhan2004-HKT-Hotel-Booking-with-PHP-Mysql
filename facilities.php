@@ -1,140 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TJ Hotel - FACILITIES</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <?php require('inc/link.php'); ?>
-    <style>
-        .pop:hover{
-        border-top-color: var(--teal) !important;
-        transform: scale(1.03);
-        transition: all 0.3s;
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php require('inc/links.php'); ?>
+  <title><?php echo $settings_r['site_title'] ?> - FACILITIES</title>
+  <style>
+    .pop:hover{
+      border-top-color: var(--teal) !important;
+      transform: scale(1.03);
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <?php require('inc/header.php'); ?>
+
+  <div class="my-5 px-4">
+    <h2 class="fw-bold h-font text-center">VỀ CƠ SỞ VẬT CHẤT</h2>
+    <div class="h-line bg-dark"></div>
+    <p class="text-center mt-3">
+    HKT Hotel tự hào sở hữu cơ sở vật chất hiện đại và sang trọng, mang lại sự tiện nghi tối đa cho khách hàng. Mỗi phòng nghỉ đều được trang bị đầy đủ tiện ích cao cấp như điều hòa không khí, TV màn hình phẳng, minibar và wifi tốc độ cao. Ngoài ra, khách sạn còn cung cấp hệ thống phòng họp và hội nghị với trang thiết bị tiên tiến, phù hợp cho các sự kiện và hội thảo chuyên nghiệp.<br>
+
+Khách sạn còn có nhà hàng phục vụ ẩm thực đa dạng từ Á đến Âu, một phòng gym hiện đại với trang thiết bị tập luyện đầy đủ, cùng dịch vụ spa thư giãn giúp du khách tận hưởng những phút giây nghỉ ngơi thoải mái. Tất cả các tiện ích đều được thiết kế nhằm đảm bảo sự hài lòng và an toàn tuyệt đối cho khách hàng.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <?php 
+        $res = selectAll('facilities');
+        $path = FACILITIES_IMG_PATH;
+
+        while($row = mysqli_fetch_assoc($res)){
+          echo<<<data
+            <div class="col-lg-4 col-md-6 mb-5 px-4">
+              <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+                <div class="d-flex align-items-center mb-2">
+                  <img src="$path$row[icon]" width="40px">
+                  <h5 class="m-0 ms-3">$row[name]</h5>
+                </div>
+                <p>$row[description]</p>
+              </div>
+            </div>
+          data;
         }
-    </style>
-    </head>
-    <body class="bg-light">
-
-    <?php require('inc/header.php'); ?>
-    
-    <div class="my-5 px-4">
-        <h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
-        <div class="h-line bg-dark"></div>
-        <p  class="text-center mt-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Temporibus incidunt odio quos <br>dolore commodi repudiandae
-        tenetur consequuntur et similique asperiores.
-        </p>
+      ?>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-     
-    
-    <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-    
-    <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-            
-    <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-    
-    <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-
-    <div class="col-lg-4 col-md-6 mb-5 px-4">   
-    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-        <div class="d-flex">
-            
-        </div>
-        <img src="image/featureswifi.sgv" width="40px">
-        <h5 class="m-0 ms-3">Wifi</h5>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Omnis quaerat non nam aperiam exercitationem neque a!
-
-        </p>
-    </div>
-            </div>
-        </div>
-        </div>
-            
-    
+  </div>
 
 
+  <?php require('inc/footer.php'); ?>
 
-
-
-
-    
-
-    <?php require('inc/footer.php'); ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-
+</body>
 </html>

@@ -11,9 +11,12 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
+/* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+    appearance: none; /* Add this line to fix compatibility */
 }
+
 
 html,
 body {

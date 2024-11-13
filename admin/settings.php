@@ -73,7 +73,9 @@ adminLogin();
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h5 class="card-title m-0">Đóng Trang web</h5>
                             <div class="form-check form-switch">
+                                <form>
                                 <input onchange="upd_shutdown(this.value)" class="form-check-input" type="checkbox" id="shutdown-toggle">
+                                </form>
                             </div>
                         </div>
                         <p class="card-text">

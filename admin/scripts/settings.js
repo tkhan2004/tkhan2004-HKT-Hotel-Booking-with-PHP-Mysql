@@ -75,3 +75,22 @@ function upd_general(site_title_val,site_about_val)
 
   xhr.send('site_title='+site_title_val+'&site_about='+site_about_val+'&upd_general');
 }
+function upd_shutdown(val)
+{
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST","ajax/settings_crud.php",true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onload = function () {
+    if (this.responseText == 1 && val == 0) {
+      alert('Thành công', 'Trang web đã được tắt!');
+    } else if (this.responseText == 1 && val == 1) {
+      alert('Thành công', 'Chế độ shutdown đang được tắt!');
+    } else {
+      alert('Lỗi', 'Không thể thay đổi trạng thái!');
+    }
+    get_general();
+  }
+
+  xhr.send('upd_shutdown='+(val == 1 ? 0 : 1));
+}

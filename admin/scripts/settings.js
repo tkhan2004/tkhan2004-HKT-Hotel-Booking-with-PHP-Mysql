@@ -51,6 +51,8 @@ general_s_form.addEventListener('submit',function(e){
 
 function upd_general(site_title_val,site_about_val)
 {
+  console.log('site_title :',site_title_val);
+  console.log('site_about :',site_about_val);
   let xhr = new XMLHttpRequest();
   xhr.open("POST","ajax/settings_crud.php",true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

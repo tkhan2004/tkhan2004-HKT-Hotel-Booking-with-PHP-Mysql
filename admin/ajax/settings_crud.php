@@ -15,6 +15,7 @@
 
     if(isset($_POST['upd_general'])) 
     {
+        var_dump($_POST);
         $frm_data = filteration($_POST);
 
         $q = "UPDATE `settings` SET `site_title`= ? ,`site_about`= ? WHERE `sr_no`= ?";

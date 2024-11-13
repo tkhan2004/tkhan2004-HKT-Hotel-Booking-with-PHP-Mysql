@@ -1,15 +1,17 @@
 <?php
-    require('inc/essential.php');
-    adminLogin();
+require('inc/essential.php');
+adminLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Cài đặt</title>
     <?php require 'inc/link.php'; ?>
 </head>
+
 <body class="bg-light">
     <!-- Header -->
     <?php require('inc/header.php'); ?>
@@ -21,7 +23,7 @@
                 <h3 class="mb-4">CÀI ĐẶT</h3>
 
                 <!-- Cài đặt card -->
-                <div class="card border-0 shadow-sm mb -4">
+                <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h5 class="card-title m-0">Cài đặt tổng thể</h5>
@@ -38,7 +40,7 @@
                 </div>
 
                 <!-- Modal Cài đặt -->
-                <div class="modal fade" id="general-s" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="true" aria-labelledby="staticBackropLabel" aria-hidden="true">
+                <div class="modal fade" id="general-s" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="true" aria-labelledby="general-sLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <form id="general_s_form">
                             <div class="modal-content">
@@ -64,12 +66,28 @@
                         </form> <!-- Đảm bảo thẻ form được đóng đúng cách -->
                     </div>
                 </div>
+
+                <!-- Mục Shutdown -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title m-0">Đóng Trang web</h5>
+                            <div class="form-check form-switch">
+                                <input onchange="upd_shutdown(this.value)" class="form-check-input" type="checkbox" id="shutdown-toggle">
+                            </div>
+                        </div>
+                        <p class="card-text">
+                            Không khách hàng nào được phép đặt phòng, khi mà chế độ shutdown đang được bật.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <?php require('inc/scripts.php'); ?>
-       <script src="scripts/settings.js"></script>
-    </body>
+    <script src="scripts/settings.js"></script>
+</body>
+
 </html>

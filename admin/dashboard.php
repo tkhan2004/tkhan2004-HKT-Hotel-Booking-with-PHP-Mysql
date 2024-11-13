@@ -22,7 +22,7 @@
         </div>
     </div>
     <?php
-        require_once('inc/script.php');
+        require_once('inc/scripts.php');
     ?>
 </body>
 </html>

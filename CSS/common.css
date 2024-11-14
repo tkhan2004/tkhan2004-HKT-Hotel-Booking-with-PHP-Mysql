@@ -16,9 +16,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 .custom-bg{
   background-color: var(--teal);
@@ -41,3 +41,4 @@ input[type=number] {
   right: 25px;
   z-index: 1111;
 }
+

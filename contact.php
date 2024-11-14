@@ -102,9 +102,7 @@
 
   <?php
   // Assuming the insert function is defined somewhere in the codebase
-  function insert($q, $values, $types) {
-      // Implementation of insert function
-  }
+
 
   // ... previous code remains the same
 

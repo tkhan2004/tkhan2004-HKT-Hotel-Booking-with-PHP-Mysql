@@ -2,7 +2,7 @@
 
   //frontend purpose data
 
-  define('SITE_URL','http://127.0.0.1/hotelbooking/');
+  define('SITE_URL','http://127.0.0.1/tkhan2004-HKT-Hotel-Booking-with-PHP-Mysql/');
   define('ABOUT_IMG_PATH',SITE_URL.'images/about/');
   define('CAROUSEL_IMG_PATH',SITE_URL.'images/carousel/');
   define('FACILITIES_IMG_PATH',SITE_URL.'images/facilities/');
@@ -12,13 +12,12 @@
 
   //backend upload process needs this data
 
-  define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hotelbooking/images/');
+  define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/tkhan2004-HKT-Hotel-Booking-with-PHP-Mysql/images/');
   define('ABOUT_FOLDER','about/');
   define('CAROUSEL_FOLDER','carousel/');
   define('FACILITIES_FOLDER','facilities/');
   define('ROOMS_FOLDER','rooms/');
   define('USERS_FOLDER','users/');
-
   // sendgrid api key
 
   define('SENDGRID_API_KEY',"PASTE YOUR API KEY GENERATED FROM SENDGRID WEBSITE");
@@ -58,30 +57,26 @@
     alert;
   }
 
-  function uploadImage($image,$folder)
-  {
-    $valid_mime = ['image/jpeg','image/png','image/webp'];
+  function uploadImage($image, $folder) {
+    $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
     $img_mime = $image['type'];
 
-    if(!in_array($img_mime,$valid_mime)){
-      return 'inv_img'; //invalid image mime or format
-    }
-    else if(($image['size']/(1024*1024))>2){
-      return 'inv_size'; //invalid size greater than 2mb
-    }
-    else{
-      $ext = pathinfo($image['name'],PATHINFO_EXTENSION);
-      $rname = 'IMG_'.random_int(11111,99999).".$ext";
+    if (!in_array($img_mime, $valid_mime)) {
+        return 'inv_img'; //invalid image mime or format
+    } else if (($image['size'] / (1024 * 1024)) > 2) {
+        return 'inv_size'; //invalid size greater than 2mb
+    } else {
+        $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+        $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
 
-      $img_path = UPLOAD_IMAGE_PATH.$folder.$rname;
-      if(move_uploaded_file($image['tmp_name'],$img_path)){
-        return $rname;
-      }
-      else{
-        return 'upd_failed';
-      }
+        $img_path = UPLOAD_IMAGE_PATH . $folder . $rname;
+        if (move_uploaded_file($image['tmp_name'], $img_path)) {
+            return $rname;
+        } else {
+            return 'upd_failed';
+        }
     }
-  }
+}
 
   function deleteImage($image, $folder)
   {

@@ -26,7 +26,7 @@
         <div style="font-size: 14px;">
           <a href="index.php" class="text-secondary text-decoration-none">TRANG CHỦ</a>
           <span class="text-secondary"> > </span>
-          <a href="#" class="text-secondary text-decoration-none">ĐẶT PHÒNG CHỨ ?</a>
+          <a href="rooms.php" class="text-secondary text-decoration-none">ĐẶT PHÒNG NÀO</a>
         </div>
       </div>
 

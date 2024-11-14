@@ -141,7 +141,7 @@ function rem_facility(val)
   }
 
   xhr.send('rem_facility='+val);
-}
+} 
 
 window.onload = function(){
   get_features();

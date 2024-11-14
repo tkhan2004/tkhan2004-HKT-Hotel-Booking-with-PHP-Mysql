@@ -64,7 +64,7 @@
       <form id="login-form">
         <div class="modal-header">
           <h5 class="modal-title d-flex align-items-center">
-            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+            <i class="bi bi-person-circle fs-3 me-2"></i> ĐĂNG NHẬP
           </h5>
           <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -106,10 +106,10 @@
                 <label class="form-label">Họ và Tên</label>
                 <input name="name" type="text" class="form-control shadow-none" required>
               </div>
-              <!-- <div class="col-md-6 mb-3">
+              <div class="col-md-6 mb-3">
                 <label class="form-label">Email</label>
                 <input name="email" type="email" class="form-control shadow-none" required>
-              </div> -->
+              </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label">Số điện thoại</label>
                 <input name="phonenum" type="number" class="form-control shadow-none" required>

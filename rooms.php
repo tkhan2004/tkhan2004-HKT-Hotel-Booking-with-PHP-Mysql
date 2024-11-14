@@ -152,7 +152,7 @@
 
       xhr.onprogress = function(){
         rooms_data.innerHTML = `<div class="spinner-border text-info mb-3 d-block mx-auto" id="loader" role="status">
-          <span class="visually-hidden">Loading...</span>
+          <span class="visually-hidden">Đang tải...</span>
         </div>`;
       }
 

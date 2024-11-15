@@ -29,7 +29,7 @@
   <!-- Carousel -->
 
   <div class="container-fluid px-lg-4 mt-4">
-    <div class="swiper swiper-container">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <?php 
           $res = selectAll('carousel');
@@ -43,6 +43,11 @@
             data;
           }
         ?>
+         </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,7 +56,7 @@
 
   <div class="container availability-form">
     <div class="row">
-      <div class="col-lg-12 bg-white shadow p-4 rounded">
+      <div class="col-lg-12 bg-white shadow p-4"style="border-radius: 35px;>
         <h5 class="mb-4">Kiểm tra còn phòng</h5>
         <form action="rooms.php">
           <div class="row align-items-end">
@@ -156,7 +161,7 @@
               $login=1;
             }
 
-            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
+            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Đặt ngay</button>";
           }
 
           $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`
@@ -170,7 +175,7 @@
           if($rating_fetch['avg_rating']!=NULL)
           {
             $rating_data = "<div class='rating mb-4'>
-              <h6 class='mb-1'>Rating</h6>
+              <h6 class='mb-1'>Đánh giá</h6>
               <span class='badge rounded-pill bg-light'>
             ";
 
@@ -191,28 +196,28 @@
                 <img src="$room_thumb" class="card-img-top">
                 <div class="card-body">
                   <h5>$room_data[name]</h5>
-                  <h6 class="mb-4">₹$room_data[price] per night</h6>
+                  <h6 class="mb-4">$room_data[price]VNĐ/Cho một đêm</h6>
                   <div class="features mb-4">
-                    <h6 class="mb-1">Features</h6>
+                    <h6 class="mb-1">Tiện ích</h6>
                     $features_data
                   </div>
                   <div class="facilities mb-4">
-                    <h6 class="mb-1">Facilities</h6>
+                    <h6 class="mb-1">Cơ sở vật chất</h6>
                     $facilities_data
                   </div>
                   <div class="guests mb-4">
-                    <h6 class="mb-1">Guests</h6>
+                    <h6 class="mb-1">Khách</h6>
                     <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      $room_data[adult] Adults
+                      $room_data[adult] Người lớn
                     </span>
                     <span class="badge rounded-pill bg-light text-dark text-wrap">
-                      $room_data[children] Children
+                      $room_data[children] Trẻ em
                     </span>
                   </div>
                   $rating_data
                   <div class="d-flex justify-content-evenly mb-2">
                     $book_btn
-                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">Thêm chi tiết</a>
                   </div>
                 </div>
               </div>
@@ -257,7 +262,7 @@
 
   <!-- Testimonials -->
 
-  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">CHỨNG THỰC KHÁCH HÀNG</h2>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Đánh giá từ khách hàng</h2>
 
   <div class="container mt-5">
     <div class="swiper swiper-testimonials">
@@ -306,7 +311,7 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="col-lg-12 text-center mt-5">
-      <a href="about.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More >>></a>
+      <a href="about.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Tìm hiểu thêm ngay tại đây!>>></a>
     </div>
   </div>
 
@@ -434,85 +439,28 @@
   
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-  <script>
-    var swiper = new Swiper(".swiper-container", {
-      spaceBetween: 30,
-      effect: "fade",
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      }
-    });
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    var swiper = new Swiper(".swiper-testimonials", {
-      effect: "coverflow",
-      grabCursor: true,
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
       centeredSlides: true,
-      slidesPerView: "auto",
-      slidesPerView: "3",
-      loop: true,
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
       },
       pagination: {
         el: ".swiper-pagination",
+        clickable: true,
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-        },
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      }
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
-
-    // recover account
-    
-    let recovery_form = document.getElementById('recovery-form');
-
-    recovery_form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-
-      let data = new FormData();
-
-      data.append('email',recovery_form.elements['email'].value);
-      data.append('token',recovery_form.elements['token'].value);
-      data.append('pass',recovery_form.elements['pass'].value);
-      data.append('recover_user','');
-
-      var myModal = document.getElementById('recoveryModal');
-      var modal = bootstrap.Modal.getInstance(myModal);
-      modal.hide();
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST","ajax/login_register.php",true);
-
-      xhr.onload = function(){
-        if(this.responseText == 'failed'){
-          alert('error',"Account reset failed!");
-        }
-        else{
-          alert('success',"Account Reset Successful !");
-          recovery_form.reset();
-        }
-      }
-
-      xhr.send(data);
-    });
-
   </script>
+</script>
 
 </body>
 </html>

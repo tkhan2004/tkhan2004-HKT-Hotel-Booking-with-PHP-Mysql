@@ -89,7 +89,6 @@
         <div class="card mb-4 border-0 shadow-sm rounded-3">
           <div class="card-body">
             <?php 
-
               echo<<<price
                 <h4><b>$room_data[price]VNĐ/CHỈ MỘT ĐÊM NỮA THÔI</b></h4>
               price;

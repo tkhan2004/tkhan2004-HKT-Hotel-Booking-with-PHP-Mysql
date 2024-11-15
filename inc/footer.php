@@ -15,7 +15,7 @@
       <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">Tìm hiểu thêm</a>
     </div>
     <div class="col-lg-4 p-4">
-        <h5 class="mb-3">Liên hệ với HKT </h5>
+        <h5 class="mb-3">LIÊN HỆ VỚI HKT </h5>
         <?php 
           if($contact_r['tw']!=''){
             echo<<<data

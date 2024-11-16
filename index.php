@@ -51,7 +51,7 @@
 
   <div class="container availability-form">
     <div class="row">
-      <div class="col-lg-12 bg-white shadow p-4 rounded">
+      <div class="col-lg-12 bg-white shadow p-4 rounded ">
         <h5 class="mb-4">Kiểm tra còn phòng</h5>
         <form action="rooms.php">
           <div class="row align-items-end">

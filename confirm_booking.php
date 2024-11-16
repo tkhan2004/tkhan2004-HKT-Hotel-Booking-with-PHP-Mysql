@@ -102,6 +102,8 @@
                   <label class="form-label">Name</label>
                   <input name="name" type="text" value="<?php echo $user_data['name'] ?>" class="form-control shadow-none" required>
                 </div>
+                <input type="hidden" name="room_id" value="<?php echo $room_data['id']; ?>">
+                <input type="hidden" name="room_name" value="<?php echo $room_data['name']; ?>">
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Phone Number</label>
                   <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>
@@ -124,9 +126,9 @@
                     <span class="visually-hidden">Loading...</span>
                   </div>
 
-                  <h6 class="mb-3 text-danger" id="pay_info">Provide check-in & check-out date !</h6>
+                  <h6 class="mb-3 text-danger" id="pay_info">Cung cấp ngày check-in & check-out !</h6>
 
-                  <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled>Pay Now</button>
+                  <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1" disabled>Đặt phòng ngay</button>
                 </div>
               </div>
             </form>

@@ -124,14 +124,11 @@
       else if(this.responseText == 'upd_failed'){
         alert('error',"Image upload failed!");
       }
-      else if(this.responseText == 'mail_failed'){
-        alert('error',"Cannot send confirmation email! Server down!");
-      }
       else if(this.responseText == 'ins_failed'){
         alert('error',"Registration failed! Server down!");
       }
       else{
-        alert('success',"Registration successful. Confirmation link sent to email!");
+        alert('success',"Đăng ký thành công chúc mừng bạn!");
         register_form.reset();
       }
     }
@@ -191,8 +188,6 @@
 
     let data = new FormData();
 
-    data.append('email',forgot_form.elements['email'].value);
-    data.append('forgot_pass','');
 
     var myModal = document.getElementById('forgotModal');
     var modal = bootstrap.Modal.getInstance(myModal);

@@ -20,10 +20,7 @@
     
     $is_shutdown = mysqli_fetch_assoc(mysqli_query($con,"SELECT `shutdown` FROM `settings`"));
 
-    $current_bookings = mysqli_fetch_assoc(mysqli_query($con,"SELECT 
-      COUNT(CASE WHEN booking_status='booked' AND arrival=0 THEN 1 END) AS `new_bookings`,
-      COUNT(CASE WHEN booking_status='cancelled' AND refund=0 THEN 1 END) AS `refund_bookings`
-      FROM `booking_order`"));
+    $current_bookings = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(*) as new_bookings FROM booking_order WHERE booking_status='new'"));
 
     $unread_queries = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(sr_no) AS `count`
       FROM `user_queries` WHERE `seen`=0"));
@@ -59,16 +56,8 @@
           <div class="col-md-3 mb-4">
             <a href="new_bookings.php" class="text-decoration-none">
               <div class="card text-center text-success p-3">
-                <h6>Đơn đặt phòng mới</h6>
+                <h6>Phòng đã đặt </h6>
                 <h1 class="mt-2 mb-0"><?php echo $current_bookings['new_bookings'] ?></h1>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-3 mb-4">
-            <a href="refund_bookings.php" class="text-decoration-none">
-              <div class="card text-center text-warning p-3">
-                <h6>Hoàn tác đặt phòng</h6>
-                <h1 class="mt-2 mb-0"><?php echo $current_bookings['refund_bookings'] ?></h1>
               </div>
             </a>
           </div>
@@ -89,41 +78,6 @@
             </a>
           </div>
         </div>
-
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h5>Booking Analytics</h5>
-          <select class="form-select shadow-none bg-light w-auto" onchange="booking_analytics(this.value)">
-            <option value="1">Past 30 Days</option>
-            <option value="2">Past 90 Days</option>
-            <option value="3">Past 1 Year</option>
-            <option value="4">All time</option>
-          </select>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-md-3 mb-4">
-            <div class="card text-center text-primary p-3">
-              <h6>Total Bookings</h6>
-              <h1 class="mt-2 mb-0" id="total_bookings">0</h1>
-              <h4 class="mt-2 mb-0" id="total_amt">₹0</h4>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="card text-center text-success p-3">
-              <h6>Active Bookings</h6>
-              <h1 class="mt-2 mb-0" id="active_bookings">0</h1>
-              <h4 class="mt-2 mb-0" id="active_amt">₹0</h4>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="card text-center text-danger p-3">
-              <h6>Cancelled Bookings</h6>
-              <h1 class="mt-2 mb-0" id="cancelled_bookings">0</h1>
-              <h4 class="mt-2 mb-0" id="cancelled_amt">₹0</h4>
-            </div>
-          </div>
-        </div>
-
 
         <div class="d-flex align-items-center justify-content-between mb-3">
           <h5>User, Queries, Reviews Analytics</h5>

@@ -1,7 +1,7 @@
 <?php
-  require('inc/essentials.php');
-  require('inc/db_config.php');
-  adminLogin();
+require('inc/essentials.php');
+require('inc/db_config.php');
+adminLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,17 +13,16 @@
   <?php require('inc/links.php'); ?>
 </head>
 <body class="bg-light">
-
   <?php require('inc/header.php'); ?>
 
   <div class="container-fluid" id="main-content">
     <div class="row">
       <div class="col-lg-10 ms-auto p-4 overflow-hidden">
         <h3 class="mb-4">NEW BOOKINGS</h3>
+        <h5>phần này load hơi lâu thầy thông cảm giúp</h5>
 
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
-
             <div class="text-end mb-4">
               <input type="text" oninput="get_bookings(this.value)" class="form-control shadow-none w-25 ms-auto" placeholder="Type to search...">
             </div>
@@ -35,27 +34,20 @@
                     <th scope="col">#</th>
                     <th scope="col">User Details</th>
                     <th scope="col">Room Details</th>
-                    <th scope="col">Bookings Details</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Booking Details</th>
                   </tr>
                 </thead>
-                <tbody id="table-data">                 
-                </tbody>
+                <tbody id="table-data"></tbody>
               </table>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-
-
-  <!-- Assign Room Number modal -->
-
-  <div class="modal fade" id="assign-room" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <!-- Assign Room Modal -->
+  <div class="modal fade" id="assign-room" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <form id="assign_room_form">
         <div class="modal-content">
@@ -67,7 +59,7 @@
               <label class="form-label fw-bold">Room Number</label>
               <input type="text" name="room_no" class="form-control shadow-none" required>
             </div>
-            <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
+            <span class="badge bg-light text-dark mb-3 lh-base">
               Note: Assign Room Number only when user has been arrived!
             </span>
             <input type="hidden" name="booking_id">
@@ -81,11 +73,7 @@
     </div>
   </div>
 
-
-
   <?php require('inc/scripts.php'); ?>
-
   <script src="scripts/new_bookings.js"></script>
-
 </body>
 </html>

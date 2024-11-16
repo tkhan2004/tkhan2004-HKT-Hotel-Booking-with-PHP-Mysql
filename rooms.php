@@ -11,7 +11,7 @@
 
   <?php 
     require('inc/header.php'); 
-
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
     $checkin_default="";
     $checkout_default="";
     $adult_default="";

@@ -81,8 +81,8 @@
                 <input type="number" min="1" name="price" class="form-control shadow-none" required>
               </div>
               <div class="col-md-6 mb-3">
-                <label class="form-label fw-bold">Quantity</label>
-                <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
+                  <label class="form-label fw-bold">Quantity</label>
+                  <input type="number" name="quantity" class="form-control shadow-none" value="1" disabled required>
               </div>
               <div class="col-md-6 mb-3">
                 <label class="form-label fw-bold">Adult (Max.)</label>

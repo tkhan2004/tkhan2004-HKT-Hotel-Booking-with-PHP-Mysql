@@ -1,9 +1,7 @@
 <?php 
-
   require('../admin/inc/db_config.php');
   require('../admin/inc/essentials.php');
-
-  date_default_timezone_set("Asia/Kolkata");
+date_default_timezone_set("Asia/Ho_Chi_Minh");
 
   if(isset($_POST['check_availability']))
   {
@@ -14,7 +12,7 @@
     // check in and out validations
 
     
-    $today_date = new DateTime(date("Y-m-d"));
+    $today_date = new DateTime(datetime: date("Y-m-d"));
     $checkin_date = new DateTime($frm_data['check_in']);
     $checkout_date = new DateTime($frm_data['check_out']);
 
@@ -33,41 +31,45 @@
 
     // check booking availability if status is blank else return the error
 
-    if($status!=''){
+    if ($status != '') {
       echo $result;
-    }
-    else{
+  } else {
       session_start();
-
-      // run query to check room is available or not 
-
+  
+      // Query to count total bookings for the selected room and date range
       $tb_query = "SELECT COUNT(*) AS `total_bookings` FROM `booking_order`
-        WHERE booking_status=? AND room_id=?
-        AND check_out > ? AND check_in < ?";
-
-      $values = ['booked',$_SESSION['room']['id'],$frm_data['check_in'],$frm_data['check_out']];
-      $tb_fetch = mysqli_fetch_assoc(select($tb_query,$values,'siss'));
-      
-      $rq_result = select("SELECT `quantity` FROM `rooms` WHERE `id`=?",[$_SESSION['room']['id']],'i');
+          WHERE booking_status=? AND room_id=?
+          AND check_out > ? AND check_in < ?";
+  
+      $values = ['booked', $_SESSION['room']['id'], $frm_data['check_in'], $frm_data['check_out']];
+      $tb_fetch = mysqli_fetch_assoc(select($tb_query, $values, 'siss'));
+  
+      // Fetch the quantity of rooms available for the selected room type
+      $rq_result = select("SELECT `quantity` FROM `rooms` WHERE `id`=?", [$_SESSION['room']['id']], 'i');
       $rq_fetch = mysqli_fetch_assoc($rq_result);
-
-      if(($rq_fetch['quantity']-$tb_fetch['total_bookings'])==0){
-        $status = 'unavailable';
-        $result = json_encode(['status'=>$status]);
-        echo $result;
-        exit;
+  
+      // Calculate remaining available rooms
+      $available_rooms = $rq_fetch['quantity'] - $tb_fetch['total_bookings'];
+  
+      if ($available_rooms <= 0) {
+          $status = 'unavailable';
+          $result = json_encode(['status' => $status]);
+          echo $result;
+          exit;
       }
-
-      $count_days = date_diff($checkin_date,$checkout_date)->days;
+  
+      // Calculate payment based on the number of days
+      $count_days = date_diff($checkin_date, $checkout_date)->days;
       $payment = $_SESSION['room']['price'] * $count_days;
-
+  
       $_SESSION['room']['payment'] = $payment;
       $_SESSION['room']['available'] = true;
-      
-      $result = json_encode(["status"=>'available', "days"=>$count_days, "payment"=> $payment]);
+  
+      $result = json_encode(["status" => 'available', "days" => $count_days, "payment" => $payment, "remaining_rooms" => $available_rooms]);
       echo $result;
-    }
-
   }
+  }
+
+
 
 ?>

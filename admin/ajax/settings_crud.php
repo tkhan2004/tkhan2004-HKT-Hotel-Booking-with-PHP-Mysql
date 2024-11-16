@@ -1,6 +1,8 @@
 <?php 
   require('../inc/db_config.php');
   require('../inc/essentials.php');
+  date_default_timezone_set("Asia/Ho_Chi_Minh");
+
   adminLogin();
 
   if(isset($_POST['get_general']))

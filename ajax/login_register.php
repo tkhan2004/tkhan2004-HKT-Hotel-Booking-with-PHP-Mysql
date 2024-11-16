@@ -2,6 +2,7 @@
 
 require('../admin/inc/db_config.php');
 require('../admin/inc/essentials.php');
+date_default_timezone_set("Asia/Ho_Chi_Minh");
 
 // Đăng ký người dùng
 if(isset($_POST['register'])) {

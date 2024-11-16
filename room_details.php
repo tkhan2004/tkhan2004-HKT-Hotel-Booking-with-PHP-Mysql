@@ -166,7 +166,7 @@
                 <div class="mb-3">
                   <h6 class="mb-1">Khu vực</h6>
                   <span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
-                    $room_data[area] sq. km.
+                    $room_data[area]m2
                   </span>
                 </div>
               area;
@@ -177,7 +177,7 @@
                   $login=1;
                 }
                 echo<<<book
-                  <button onclick='checkLoginToBook($login,$room_data[id])' class="btn w-100 text-white custom-bg shadow-none mb-1">Book Now</button>
+                  <button onclick='checkLoginToBook($login,$room_data[id])' class="btn w-100 text-white custom-bg shadow-none mb-1">Đặt ngay</button>
                 book;
               }
 

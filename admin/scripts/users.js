@@ -20,11 +20,11 @@ function toggle_status(id,val)
 
   xhr.onload = function(){
     if(this.responseText==1){
-      alert('success','Status toggled!');
+      alert('Thành công','Trạng thái đã được làm mới!');
       get_users();
     }
     else{
-      alert('success','Server Down!');
+      alert('Thành công','Server sập rồi!');
     }
   }
 
@@ -33,7 +33,7 @@ function toggle_status(id,val)
 
 function remove_user(user_id)
 {
-  if(confirm("Are you sure, you want to remove this user?"))
+  if(confirm("Bạn có chắc là bạn muốn xóa người dùng này không?"))
   {
     let data = new FormData();
     data.append('user_id',user_id);
@@ -45,11 +45,11 @@ function remove_user(user_id)
     xhr.onload = function()
     {
       if(this.responseText == 1){
-        alert('success','User Removed!');
+        alert('Thành công','Xóa người dùng!');
         get_users();
       }
       else{
-        alert('error','User removal failed!');
+        alert('Lỗi','Loại bỏ người dùng thất bại!');
       }
     }
     xhr.send(data);

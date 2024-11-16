@@ -33,14 +33,14 @@
           </a>
 
           <h5 class="mt-4">Số điện thoại của Khách sạn</h5>
-          <a href="tel: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+          <a href="SĐT: +<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
             <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?>
           </a>
           <br>
           <?php 
             if($contact_r['pn2']!=''){
               echo<<<data
-                <a href="tel: +$contact_r[pn2]" class="d-inline-block text-decoration-none text-dark">
+                <a href="SĐT: +$contact_r[pn2]" class="d-inline-block text-decoration-none text-dark">
                   <i class="bi bi-telephone-fill"></i> +$contact_r[pn2]
                 </a>
               data;
@@ -49,7 +49,7 @@
 
 
           <h5 class="mt-4">Email</h5>
-          <a href="mailto: <?php echo $contact_r['email'] ?>" class="d-inline-block text-decoration-none text-dark">
+          <a href="Gửi mail cho: <?php echo $contact_r['email'] ?>" class="d-inline-block text-decoration-none text-dark">
             <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email'] ?>
           </a>
 

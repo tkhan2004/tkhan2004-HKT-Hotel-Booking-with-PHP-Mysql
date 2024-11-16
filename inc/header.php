@@ -34,9 +34,9 @@
                   $_SESSION[uName]
                 </button>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                  <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-                  <li><a class="dropdown-item" href="bookings.php">Bookings</a></li>
-                  <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                  <li><a class="dropdown-item" href="profile.php">Thông tin cá nhân</a></li>
+                  <li><a class="dropdown-item" href="bookings.php">Đặt phòng</a></li>
+                  <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                 </ul>
               </div>
             data;
@@ -64,7 +64,7 @@
       <form id="login-form">
         <div class="modal-header">
           <h5 class="modal-title d-flex align-items-center">
-            <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+            <i class="bi bi-person-circle fs-3 me-2"></i> Đăng nhập cho khách hàng
           </h5>
           <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>

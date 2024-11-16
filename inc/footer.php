@@ -12,7 +12,7 @@
       <a href="rooms.php" class="d-inline-block mb-2 text-dark text-decoration-none">Phòng</a> <br>
       <a href="facilities.php" class="d-inline-block mb-2 text-dark text-decoration-none">Cơ sở vật chất</a> <br>
       <a href="contact.php" class="d-inline-block mb-2 text-dark text-decoration-none">Liên hệ với chúng tôi</a> <br>
-      <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">More about</a>
+      <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">Một số thông tin ngoài về chúng tôi</a>
     </div>
     <div class="col-lg-4 p-4">
         <h5 class="mb-3">Theo dõi chúng tôi tại</h5>
@@ -20,7 +20,7 @@
           if($contact_r['tw']!=''){
             echo<<<data
               <a href="$contact_r[tw]" class="d-inline-block text-dark text-decoration-none mb-2">
-                <i class="bi bi-twitter me-1"></i> Twitter
+                <i class="bi bi-twitter me-1"></i> Thread
               </a><br>
             data;
           }
@@ -110,28 +110,25 @@
 
     xhr.onload = function(){
       if(this.responseText == 'pass_mismatch'){
-        alert('error',"Password Mismatch!");
+        alert('Lỗi',"Mật khẩu không chính xác!");
       }
       else if(this.responseText == 'email_already'){
-        alert('error',"Email is already registered!");
+        alert('Lỗi',"Email đã được đăng ký gòi!");
       }
       else if(this.responseText == 'phone_already'){
-        alert('error',"Phone number is already registered!");
+        alert('Lỗi',"Số điện thoại đã có người đăng ký!");
       }
       else if(this.responseText == 'inv_img'){
-        alert('error',"Only JPG, WEBP & PNG images are allowed!");
+        alert('Lỗi',"Chỉ cho phép ảnh JPG,WEBP,PNG!");
       }
       else if(this.responseText == 'upd_failed'){
-        alert('error',"Image upload failed!");
-      }
-      else if(this.responseText == 'mail_failed'){
-        alert('error',"Cannot send confirmation email! Server down!");
+        alert('Lỗi',"Tải ảnh thất bại!");
       }
       else if(this.responseText == 'ins_failed'){
-        alert('error',"Registration failed! Server down!");
+        alert('Lỗi',"Đăng ký thất bại, sập server luôn gòi!");
       }
       else{
-        alert('success',"Registration successful. Confirmation link sent to email!");
+        alert('Thành công',"Đăng ký thành công, kính chào quý khách!");
         register_form.reset();
       }
     }
@@ -159,16 +156,13 @@
 
     xhr.onload = function(){
       if(this.responseText == 'inv_email_mob'){
-        alert('error',"Invalid Email or Mobile Number!");
-      }
-      else if(this.responseText == 'not_verified'){
-        alert('error',"Email is not verified!");
+        alert('Lỗi',"Email/ SĐT Sai hoặc không tồn tại!");
       }
       else if(this.responseText == 'inactive'){
-        alert('error',"Account Suspended! Please contact Admin.");
+        alert('error',"Tài khoản bị chặn, xin hãy liên hệ với Admin.");
       }
       else if(this.responseText == 'invalid_pass'){
-        alert('error',"Incorrect Password!");
+        alert('Lỗi',"Mật khẩu không đúng!");
       }
       else{
         let fileurl = window.location.href.split('/').pop().split('?').shift();
@@ -203,22 +197,16 @@
 
     xhr.onload = function(){
       if(this.responseText == 'inv_email'){
-        alert('error',"Invalid Email !");
-      }
-      else if(this.responseText == 'not_verified'){
-        alert('error',"Email is not verified! Please contact Admin");
+        alert('Lỗi',"Sai email !");
       }
       else if(this.responseText == 'inactive'){
-        alert('error',"Account Suspended! Please contact Admin.");
-      }
-      else if(this.responseText == 'mail_failed'){
-        alert('error',"Cannot send email. Server Down!");
+        alert('Lỗi',"Tài khoản bị chặn! vui lòng liên hệ với chúng tôi.");
       }
       else if(this.responseText == 'upd_failed'){
-        alert('error',"Account recovery failed. Server Down!");
+        alert('Lỗi',"Khôi phục tài khoản thất bại. Server Sập!");
       }
       else{
-        alert('success',"Reset link sent to email!");
+        alert('Thành công',"Đã đặt lại mật khẩu!");
         forgot_form.reset();
       }
     }
@@ -231,7 +219,7 @@
       window.location.href='confirm_booking.php?id='+room_id;
     }
     else{
-      alert('error','Please login to book room!');
+      alert('Vui lòng','Đăng nhập để đặt phòng!');
     }
   }
 

@@ -31,7 +31,7 @@
       <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
         <h3 class="mb-3">CHÂN DUNG DOANH NHÂN HỨA HẸN NHIỀU NHẤT AKA SIÊU ĐA CẤP (TRẦN MINH HOÀNG)</h3>
         <p>
-          Trần Minh Hoàng là chủ tịch của HKT Hotel, đã lâu đã phát triển dịch vụ và quản lý các phòng của khách sạn. Công việc của họ rất quan trọng, nhằm đảm bảo tính hài lòng và sự an toàn của khách hàng. Hoàng Trực Khang và Khang đã tạo ra những dịch vụ tốt nhất cho khách hàng, giúp họ tìm kiếm và đặt phòng khách sạn nhanh chóng.
+          Trần Minh Hoàng là chủ tịch của HKT Hotel, đã lâu đã phát triển dịch vụ và quản lý các phòng của khách sạn. Công việc của anh ấy rất quan trọng, nhằm đảm bảo tính hài lòng và sự an toàn của khách hàng. Hoàng,Trực,Khangđã tạo ra những dịch vụ tốt nhất cho khách hàng, giúp họ tìm kiếm và đặt phòng khách sạn nhanh chóng.
         </p>
       </div>
       <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">

@@ -278,7 +278,7 @@
           $img_path = USERS_IMG_PATH;
 
           if(mysqli_num_rows($review_res)==0){
-            echo 'No reviews yet!';
+            echo 'Hiện tại chưa có bài reviews!';
           }
           else
           {
@@ -349,7 +349,7 @@
               echo<<<data
                 <a href="$contact_r[tw]" class="d-inline-block mb-3">
                   <span class="badge bg-light text-dark fs-6 p-2"> 
-                  <i class="bi bi-twitter me-1"></i> Twitter
+                  <i class="bi bi-twitter me-1"></i> Thread
                   </span>
                 </a>
                 <br>

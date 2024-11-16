@@ -26,12 +26,12 @@
       }
 
       $status = "<button onclick='toggle_status($row[id],0)' class='btn btn-dark btn-sm shadow-none'>
-        active
+        Hoạt động
       </button>";
 
       if(!$row['status']){
         $status = "<button onclick='toggle_status($row[id],1)' class='btn btn-danger btn-sm shadow-none'>
-          inactive
+          Ngưng hoạt động
         </button>";
       }
 
@@ -117,12 +117,12 @@
       }
 
       $status = "<button onclick='toggle_status($row[id],0)' class='btn btn-dark btn-sm shadow-none'>
-        active
+        Hoạt động
       </button>";
 
       if(!$row['status']){
         $status = "<button onclick='toggle_status($row[id],1)' class='btn btn-danger btn-sm shadow-none'>
-          inactive
+          Ngưng hoạt động
         </button>";
       }
 

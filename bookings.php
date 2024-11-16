@@ -57,14 +57,14 @@
             $status_bg = "bg-success";
             if($data['arrival']==1)
             {
-              $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+              $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Tải BILL PDF</a>";
  
               if($data['rate_review']==0){
-                $btn.="<button type='button' onclick='review_room($data[booking_id],$data[room_id])' data-bs-toggle='modal' data-bs-target='#reviewModal' class='btn btn-dark btn-sm shadow-none ms-2'>Rate & Review</button>";
+                $btn.="<button type='button' onclick='review_room($data[booking_id],$data[room_id])' data-bs-toggle='modal' data-bs-target='#reviewModal' class='btn btn-dark btn-sm shadow-none ms-2'>Đánh giá và reviews</button>";
               }
             }
             else{
-              $btn="<button onclick='cancel_booking($data[booking_id])' type='button' class='btn btn-danger btn-sm shadow-none'>Cancel</button>";
+              $btn="<button onclick='cancel_booking($data[booking_id])' type='button' class='btn btn-danger btn-sm shadow-none'>Hủy</button>";
             }
           }
           else if($data['booking_status']=='cancelled')
@@ -72,30 +72,30 @@
             $status_bg = "bg-danger";
 
             if($data['refund']==0){
-              $btn="<span class='badge bg-primary'>Refund in process!</span>";
+              $btn="<span class='badge bg-primary'>Đang hủy đặt phòng!</span>";
             }
             else{
-              $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+              $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Tải file PDF</a>";
             }
           }
           else
           {
             $status_bg = "bg-warning";
-            $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+            $btn="<a href='generate_pdf.php?gen_pdf&id=$data[booking_id]' class='btn btn-dark btn-sm shadow-none'>Tải file PDF</a>";
           }
 
           echo<<<bookings
             <div class='col-md-4 px-4 mb-4'>
               <div class='bg-white p-3 rounded shadow-sm'>
                 <h5 class='fw-bold'>$data[room_name]</h5>
-                <p>₹$data[price] per night</p>
+                <p>$data[price]VNĐ/ một đêm</p>
                 <p>
                   <b>Check in: </b> $checkin <br>
                   <b>Check out: </b> $checkout
                 </p>
                 <p>
-                  <b>Số lượng </b> ₹$data[price] <br>
-                  <b>Order ID: </b> $data[order_id] <br>
+                  <b>Số lượng </b>$data[price]/VNĐ <br>
+                  <b>Mã số đặt phòng: </b> $data[order_id] <br>
                   <b>Ngày đặt phòng: </b> $date
                 </p>
                 <p>
@@ -169,7 +169,7 @@
   <script>
     function cancel_booking(id)
     {
-      if(confirm('Are you sure to cancel booking?'))
+      if(confirm('Bạn có chắc là bạn muốn hủy đặt phòng không?'))
       {        
         let xhr = new XMLHttpRequest();
         xhr.open("POST","ajax/cancel_booking.php",true);
@@ -195,7 +195,7 @@
       review_form.elements['room_id'].value = rid;
     }
 
-    review_form.addEventListener('submit',function(e){
+    review_form.addEventListener('Đăng ký',function(e){
       e.preventDefault();
 
       let data = new FormData();

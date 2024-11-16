@@ -19,13 +19,13 @@
   <div class="container-fluid" id="main-content">
     <div class="row">
       <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-        <h3 class="mb-4">USERS</h3>
+        <h3 class="mb-4">NGƯỜI DÙNG</h3>
 
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
 
             <div class="text-end mb-4">
-              <input type="text" oninput="search_user(this.value)" class="form-control shadow-none w-25 ms-auto" placeholder="Type to search...">
+              <input type="text" oninput="search_user(this.value)" class="form-control shadow-none w-25 ms-auto" placeholder="Tìm kiếm...">
             </div>
 
             <div class="table-responsive">
@@ -33,15 +33,15 @@
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Họ và tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Phone no.</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">DOB</th>
-                    <th scope="col">Verified</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Địa điểm</th>
+                    <th scope="col">Ngày sinh</th>
+                    <th scope="col">Xác thực</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày</th>
+                    <th scope="col">Hoạt động</th>
                   </tr>
                 </thead>
                 <tbody id="users-data">                 

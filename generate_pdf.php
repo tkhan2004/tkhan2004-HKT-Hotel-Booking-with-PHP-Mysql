@@ -51,12 +51,12 @@
         <td>Email: $data[email]</td>
       </tr>
       <tr>
-        <td>Phone Number: $data[phonenum]</td>
+        <td>Phone Number:+$data[phonenum]</td>
         <td>Address: $data[address]</td>
       </tr>
       <tr>
         <td>Room Name: $data[room_name]</td>
-        <td>Cost: ₹$data[price] per night</td>
+        <td>Cost:$data[price]VNĐ/ Cho một đêm</td>
       </tr>
       <tr>
         <td>Check-in: $checkin</td>
@@ -90,7 +90,6 @@
 
     $table_data.="</table>";
 
-    $mpdf = new \Mpdf\Mpdf();
     $mpdf->WriteHTML($table_data);
     $mpdf->Output($data['order_id'].'.pdf','D');
 

@@ -71,10 +71,10 @@
     while($row = mysqli_fetch_assoc($res))
     {
       if($row['status']==1){
-        $status = "<button onclick='toggle_status($row[id],0)' class='btn btn-dark btn-sm shadow-none'>active</button>";
+        $status = "<button onclick='toggle_status($row[id],0)' class='btn btn-dark btn-sm shadow-none'>Hoạt động</button>";
       }
       else{
-        $status = "<button onclick='toggle_status($row[id],1)' class='btn btn-warning btn-sm shadow-none'>inactive</button>";
+        $status = "<button onclick='toggle_status($row[id],1)' class='btn btn-warning btn-sm shadow-none'>Ngưng hoạt động</button>";
       }
 
 
@@ -82,16 +82,16 @@
         <tr class='align-middle'>
           <td>$i</td>
           <td>$row[name]</td>
-          <td>$row[area] sq. ft.</td>
+          <td>$row[area]m2</td>
           <td>
             <span class='badge rounded-pill bg-light text-dark'>
-              Adult: $row[adult]
+              Người lớn: $row[adult]
             </span><br>
             <span class='badge rounded-pill bg-light text-dark'>
-              Children: $row[children]
+              Trẻ em: $row[children]
             </span>
           </td>
-          <td>₹$row[price]</td>
+          <td>$row[price]VNĐ</td>
           <td>$row[quantity]</td>
           <td>$status</td>
           <td>

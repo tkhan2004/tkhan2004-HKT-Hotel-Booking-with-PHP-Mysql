@@ -34,12 +34,12 @@ assign_room_form.addEventListener('submit',function(e){
     modal.hide();
 
     if(this.responseText==1){
-      alert('success','Room Number Alloted! Booking Finalized!');
+      alert('Thành công','Room Number Alloted! Booking Finalized!');
       assign_room_form.reset();
       get_bookings();
     }
     else{
-      alert('error','Server Down!');
+      alert('lỗi','Server sập!');
     }
   }
 
@@ -48,7 +48,7 @@ assign_room_form.addEventListener('submit',function(e){
 
 function cancel_booking(id) 
 {
-  if(confirm("Are you sure, you want to cancel this booking?"))
+  if(confirm("Bạn có chắc là bạn muốn hủy đặt phòng không ?"))
   {
     let data = new FormData();
     data.append('booking_id',id);
@@ -60,11 +60,11 @@ function cancel_booking(id)
     xhr.onload = function()
     {
       if(this.responseText == 1){
-        alert('success','Booking Cancelled!');
+        alert('Thành công','Hủy đặt phòng!');
         get_bookings();
       }
       else{
-        alert('error','Server Down!');
+        alert('Lỗi','Server sập!');
       }
     }
 

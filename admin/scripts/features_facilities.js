@@ -21,12 +21,12 @@ function add_feature()
     modal.hide();
 
     if(this.responseText == 1){
-      alert('success','New feature added!');
+      alert('Thành công','Tiện ích mới đã được thêm!');
       feature_s_form.elements['feature_name'].value='';
       get_features();
     }
     else{
-      alert('error','Server Down!');
+      alert('Lỗi','Server sập!');
     }
   }
 
@@ -58,10 +58,10 @@ function rem_feature(val)
       get_features();
     }
     else if(this.responseText == 'room_added'){
-      alert('error','Feature is added in room!');
+      alert('Lỗi','Tiện ích đã được thêm vào trong phòng!');
     }
     else{
-      alert('error','Server down!');
+      alert('Lỗi','Server sập!');
     }
   }
 
@@ -90,16 +90,16 @@ function add_facility()
     modal.hide();
 
     if(this.responseText == 'inv_img'){
-      alert('error','Only SVG images are allowed!');
+      alert('Lỗi','Chỉ cho phép ảnh SVG!');
     }
     else if(this.responseText == 'inv_size'){
-      alert('error','Image should be less than 1MB!');
+      alert('Lỗi','Ảnh phải nhỏ hơn 1MB!');
     }
     else if(this.responseText == 'upd_failed'){
-      alert('error','Image upload failed. Server Down!');
+      alert('Lỗi','Tải ảnh thất bại. Server Down!');
     }
     else{
-      alert('success','New facility added!');
+      alert('Thành công','Cơ sở vật chất mới đã được thêm vào!');
       facility_s_form.reset();
       get_facilities();
     }
@@ -129,14 +129,14 @@ function rem_facility(val)
 
   xhr.onload = function(){
     if(this.responseText==1){
-      alert('success','Facility removed!');
+      alert('Thành công','Cơ sở vật chất đã được xóa!');
       get_facilities();
     }
     else if(this.responseText == 'room_added'){
-      alert('error','Facility is added in room!');
+      alert('Lỗi','Cơ sở vật chất đã được thêm vào!');
     }
     else{
-      alert('error','Server down!');
+      alert('Lỗi','Server sập!');
     }
   }
 

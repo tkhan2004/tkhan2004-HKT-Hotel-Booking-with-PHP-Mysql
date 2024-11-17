@@ -102,6 +102,8 @@
                   <label class="form-label">Họ và Tên</label>
                   <input name="name" type="text" value="<?php echo $user_data['name'] ?>" class="form-control shadow-none" required>
                 </div>
+                <input type="hidden" name="room_id" value="<?php echo $room_data['id']; ?>">
+                <input type="hidden" name="room_name" value="<?php echo $room_data['name']; ?>">
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Số điện thoại</label>
                   <input name="phonenum" type="number" value="<?php echo $user_data['phonenum'] ?>" class="form-control shadow-none" required>

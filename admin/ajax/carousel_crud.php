@@ -3,6 +3,8 @@
   require('../inc/db_config.php');
   require('../inc/essentials.php');
   adminLogin();
+  date_default_timezone_set("Asia/Ho_Chi_Minh");
+
 
 
   if(isset($_POST['add_image']))

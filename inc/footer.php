@@ -185,8 +185,6 @@
 
     let data = new FormData();
 
-    data.append('email',forgot_form.elements['email'].value);
-    data.append('forgot_pass','');
 
     var myModal = document.getElementById('forgotModal');
     var modal = bootstrap.Modal.getInstance(myModal);
